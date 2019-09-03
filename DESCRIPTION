@@ -13,7 +13,7 @@ Authors@R: c(
         role = c("aut"), comment = c(ORCID = "0000-0002-1901-8265"))
     )
 Description: Implementation of the Harmony algorithm for single cell integration, described in Korsunsky et al <doi.org/10.1101/461954>. Package includes a standalone Harmony function and interfaces to external frameworks.
-URL: software.broadinstitute.org/harmony
+URL: https://github.com/immunogenomics/harmony
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 6.1.1
@@ -37,3 +37,4 @@ Suggests:
     rmarkdown,
     BiocStyle
 VignetteBuilder: knitr
+BugReports: https://github.com/immunogenomics/harmony/issues

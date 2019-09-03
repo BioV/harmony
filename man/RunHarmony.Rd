@@ -16,13 +16,13 @@ RunHarmony(object, group.by.vars, ...)
   epsilon.harmony = 1e-04, plot_convergence = FALSE, verbose = TRUE,
   reference_values = NULL, reduction.save = "harmony", ...)
 
-\method{RunHarmony}{Seurat}(object, group.by.vars, dims.use = NULL,
-  theta = NULL, lambda = NULL, sigma = 0.1, nclust = NULL,
-  tau = 0, block.size = 0.05, max.iter.harmony = 10,
+\method{RunHarmony}{Seurat}(object, group.by.vars, reduction = "pca",
+  dims.use = NULL, theta = NULL, lambda = NULL, sigma = 0.1,
+  nclust = NULL, tau = 0, block.size = 0.05, max.iter.harmony = 10,
   max.iter.cluster = 20, epsilon.cluster = 1e-05,
   epsilon.harmony = 1e-04, plot_convergence = FALSE, verbose = TRUE,
   reference_values = NULL, reduction.save = "harmony",
-  assay.use = "RNA", ...)
+  assay.use = "RNA", project.dim = TRUE, ...)
 
 \method{RunHarmony}{SingleCellExperiment}(object, group.by.vars,
   dims.use = NULL, theta = NULL, lambda = NULL, sigma = 0.1,
@@ -88,16 +88,20 @@ that have batch variables values matching reference_values will not be moved}
 to try Harmony with multiple parameters and save them as e.g. 
 'harmony_theta0', 'harmony_theta1', 'harmony_theta2'}
 
+\item{reduction}{Name of dimension reduction to use. Default is PCA.}
+
 \item{assay.use}{(Seurat V3 only) Which assay to Harmonize with (RNA 
 by default).}
+
+\item{project.dim}{Project dimension reduction loadings. Default TRUE.}
 }
 \value{
 Seurat (version 2) object. Harmony dimensions placed into 
 dimensional reduction object harmony. For downstream Seurat analyses, 
 use reduction.use='harmony' and reduction.type='harmony'.
 
-Seurat (version 3) object. Harmony dimensions placed into 
-dimensional reduction object harmony. For downstream Seurat analyses, 
+Seurat (version 3) object. Harmony dimensions placed into
+dimensional reduction object harmony. For downstream Seurat analyses,
 use reduction='harmony'.
 
 SingleCellExperiment object. After running RunHarmony, the corrected
