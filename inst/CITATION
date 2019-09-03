@@ -13,7 +13,7 @@ citEntry(entry = "article",
     person("Soumya", "Raychaudhuri")
   ),
   title = "Fast, sensitive, and accurate integration of single cell data with Harmony",
-  publisher = "bioRxiv",
+  journal = "bioRxiv",
   year = "2019",
   url = "https://doi.org/10.1101/461954",
   textVersion = "Korsunsky, I. et al. Fast, sensitive, and accurate integration of single cell data with Harmony. bioRxiv 461954 (2018). doi:10.1101/461954"
