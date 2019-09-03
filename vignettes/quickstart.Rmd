@@ -177,6 +177,114 @@ You can also run Harmony as part of an established pipeline in several
 packages, such as Seurat, MUDAN, and scran. For these vignettes, please
 [visit our website](software.broadinstitute.org/harmony). 
 
+The most common way to run Harmony is on reduced dimensions such as PC
+embeddings from principal component analysis (PCA). If you use low
+dimensional embeddings, set `do_pca = FALSE`. A small single-cell
+RNA-seq dataset is include in the Harmony package.
+
+```r
+library(harmony)
+
+data(cell_lines)
+
+cell_lines$meta_data[1:5,]
+## # A tibble: 6 x 5
+##   cell_id               dataset nGene percent_mito cell_type
+##   <chr>                 <chr>   <int>        <dbl> <chr>
+## 1 half_GTACGAACCACCAA   half     1508       0.0148 jurkat
+## 2 t293_AGGTCATGCACTTT   t293     4009       0.0232 t293
+## 3 half_ATAGTTGACTTCTA   half     3545       0.0153 jurkat
+## 4 half_GAGCGGCTTGCTTT   half     2450       0.0170 jurkat
+## 5 jurkat_CTGATACTCCGTAA jurkat   2388       0.0601 jurkat
+
+cell_lines$scaled_pcs[1:5,1:5]
+##              X1            X2            X3           X4           X5
+## 1:  0.002806741 -0.0014502980 -0.0063901369 0.0002824677  0.001444069
+## 2: -0.011669691  0.0008773044  0.0008972694 0.0013239566 -0.003291763
+## 3:  0.009334467 -0.0069718865 -0.0025989384 0.0018824674 -0.003803677
+## 4:  0.006339979 -0.0025175931 -0.0043900882 0.0002737979 -0.002497476
+## 5:  0.008545583  0.0070866873 -0.0022541011 0.0016793801  0.004554607
+
+# Run the Harmony algorithm on the PCs.
+harmonized_pcs <- HarmonyMatrix(
+  data_mat  = cell_lines$scaled_pcs,
+  meta_data = cell_lines$meta_data,
+  vars_use  = "dataset",
+  do_pca    = FALSE
+)
+
+harmonized_pcs[1:5,1:5]
+##                X1            X2            X3           X4           X5
+## [1,]  0.004328379  0.0023091631 -4.207100e-03 0.0005384881  0.001530069
+## [2,] -0.011658395  0.0001938143  3.168350e-04 0.0010923436 -0.003427295
+## [3,]  0.010934694 -0.0025131628 -6.655157e-05 0.0019817633 -0.003617146
+## [4,]  0.008157150  0.0018712240 -1.502931e-03 0.0006383834 -0.002240632
+## [5,]  0.006956255  0.0032281410 -4.582874e-03 0.0013581108  0.004490102
+```
+
+## Normalized gene matrix
+
+You can also run Harmony on a sparse matrix of library size normalized
+expression counts. The `HarmonyMatrix()` function will scale expression data,
+run PCA, and run the Harmony integration algorithm.
+
+```r
+library(harmony)
+my_harmony_embeddings <- HarmonyMatrix(
+  data_mat  = normalized_counts,
+  meta_data = meta_data,
+  vars_use  = "dataset"
+)
+```
+
+## Seurat 
+
+You can run Harmony within your Seurat workflow. You'll only need to make two
+changes to your code.
+
+1. Run Harmony with the `RunHarmony()` function.
+2. In downstream analyses, use the Harmony embeddings instead of PCA. 
+
+For example, run Harmony and then UMAP in two lines.  
+
+```r
+seuratObj <- RunHarmony(seuratObj, "dataset")
+seuratObj <- RunUMAP(seuratObj, reduction = "harmony")
+```
+
+For details, check out these vignettes: 
+
+- [Seurat V2](http://htmlpreview.github.io/?https://github.com/immunogenomics/harmony/blob/master/docs/SeuratV2.html)
+- [Seurat V3](http://htmlpreview.github.io/?https://github.com/immunogenomics/harmony/blob/master/docs/SeuratV3.html)
+
+## MUDAN
+
+You can run Harmony with functions from the [MUDAN][mudan] R package. For more,
+details, check out this [vignette][mudan-vignette].
+
+[mudan]: https://github.com/jefworks/mudan
+[mudan-vignette]: http://htmlpreview.github.io/?https://github.com/immunogenomics/harmony/blob/master/docs/mudan.html
+
+## Harmony with two or more covariates
+
+Harmony can integrate over multiple covariates. To do this, specify a vector
+covariates to integrate. 
+
+```r
+harmonized_pcs <- HarmonyMatrix(
+  data_mat  = scaled_pcs,
+  meta_data = meta_data,
+  vars_use  = c("dataset", "donor", "batch_id"), # multiple covariates
+  do_pca    = FALSE
+)
+```
+
+Do the same with your Seurat object: 
+
+```r
+seuratObject <- RunHarmony(seuratObject, c("dataset", "donor", "batch_id"))
+```
+
 
 ## Detailed breakdown of the Harmony algorithm
 

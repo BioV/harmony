@@ -1,98 +1,63 @@
-# Harmony
+# Harmony <img src="man/figures/logo.png" align="right" alt="" width="120" />
+
+Harmony is an open-source, general-purpose, R package with an efficient
+algorithm for integrating multiple data sets.
+
+For example, Harmony can align multiple single-cell RNA-seq data sets for batch
+correction or meta analysis of cells from different tissues, donors, and
+technologies.
+
+The algorithm has four main steps:
 
 ![ ](vignettes/main.jpg)
 
-*Scalable integration of single cell RNAseq data for batch correction and meta analysis*
+# Citing Harmony
 
-Check out the latest preprint of Harmony on [bioRxiv](https://www.biorxiv.org/content/early/2018/11/04/461954)
+If you use Harmony for published work, please cite the original manuscript.
 
-# System requirements 
+<div class="well">
+<p><b>Fast, sensitive, and accurate integration of single cell data with Harmony</b></p>
+<p>Ilya Korsunsky, Jean Fan, Kamil Slowikowski, Fan Zhang, Kevin Wei, Yuriy
+Baglaenko, Michael Brenner, Po-Ru Loh, Soumya Raychaudhuri</p>
+<p><i>bioRxiv</i> 2019. <a href="https://doi.org/10.1101/461954">doi.org/10.1101/461954</a></p>
+</div>
 
-Harmony has been tested on R versions >= 3.4. Please consult the DESCRIPTION file for more details on required R packages. Harmony has been tested on Linux, OS X, and Windows platforms.
+We will share the code needed to reproduce results from the manuscript at
+<https://github.com/immunogenomics/harmony2019>. 
 
 # Installation
 
-To run Harmony, open R and install directly from github using the following commands: 
+The easiest way to get Harmony is to install it from Github:
 
+```r
+# install.packages("devtools")
+devtools::install_github("immunogenomics/harmony")
 ```
-library(devtools)
-install_github("immunogenomics/harmony")
-```
 
-Installation may include compiling C++ code from source, so it can take a few minutes. 
+Harmony has been tested on R versions >= 3.4 on Linux, OS X, and Windows.
 
-# Usage/Demos
+# Usage
 
-We made it easy to run Harmony in most common R analysis pipelines. 
+Run the `HarmonyMatrix()` function on your PCs from principal component analysis:
 
-## Quick Start 
-
-Check out this [vignette](https://github.com/immunogenomics/harmony/blob/master/vignettes/quickstart.Rmd) for a quick start tutorial. 
-
-## PCA matrix
-
-The Harmony algorithm iteratively corrects PCA embeddings. To input your own low dimensional embeddings directly, set `do_pca=FALSE`. Harmony is packaged with a small dataset 
-
-```
+```r
 library(harmony)
-my_harmony_embeddings <- HarmonyMatrix(my_pca_embeddings, meta_data, "dataset", do_pca=FALSE)
+
+harmonized_pcs <- HarmonyMatrix(
+  data_mat  = pcs,       # Matrix with coordinates for each cell (row) along many PCs (columns)
+  meta_data = meta_data, # Dataframe with information for each cell (row)
+  vars_use  = "dataset", # Column in meta_data that defines dataset for each cell
+  do_pca    = FALSE      # Since we are providing PCs, do not run PCA
+)
 ```
 
-## Normalized gene matrix
+## Tutorials
 
-You can also run Harmony on a sparse matrix of library size normalized expression counts. Harmony will scale these counts, run PCA, and finally perform integration. 
+Check out the [quick start tutorial][quickstart] for more details.
 
-```
-library(harmony)
-my_harmony_embeddings <- HarmonyMatrix(normalized_counts, meta_data, "dataset")
-```
+Learn more about the internal data structures and algorithm details in the
+[advanced tutorial][advanced].
 
-## Seurat 
-
-You can run Harmony within your Seurat workflow. You'll only need to make two changes to your code.
-
-1) Run Harmony with the `RunHarmony()` function
-2) In downstream analyses, use the Harmony embeddings instead of PCA. 
-
-For example, run Harmony and then UMAP in two lines.  
-
-```
-seuratObj <- RunHarmony(seuratObj, "dataset")
-seuratObj <- RunUMAP(seuratObj, reduction = "harmony")
-```
-
-For details, check out these vignettes: 
-
-- [Seurat V2](http://htmlpreview.github.io/?https://github.com/immunogenomics/harmony/blob/master/docs/SeuratV2.html)
-- [Seurat V3](http://htmlpreview.github.io/?https://github.com/immunogenomics/harmony/blob/master/docs/SeuratV3.html)
-
-## MUDAN
-
-You can run Harmony with functions from the [MUDAN package](https://github.com/jefworks/mudan). For more, details, check out this [vignette](http://htmlpreview.github.io/?https://github.com/immunogenomics/harmony/blob/master/docs/mudan.html).
-
-
-## Harmony with two or more covariates
-
-Harmony can integrate over multiple covariates. To do this, specify a vector covariates to integrate. 
-
-```
-my_harmony_embeddings <- HarmonyMatrix(my_pca_embeddings, meta_data, c("dataset", "donor", "batch_id"), do_pca=FALSE)
-```
-
-Do the same with your Seurat object: 
-
-```
-seuratObject <- RunHarmony(seuratObject, c("dataset", "donor", "batch_id"))
-```
-
-## Advanced 
-
-The examples above all return integrated PCA embeddings. We created a more [advanced tutorial](http://htmlpreview.github.io/?https://github.com/immunogenomics/harmony/blob/master/docs/advanced.html) that explores the internal data structures used in the Harmony algorithm. 
-
-# Reproducing results from manuscript
-
-Code to reproduce Harmony results from the Korsunsky et al 2019 manuscript will be made available on github.com/immunogenomics/harmony2019. 
-
-
-
+[quickstart]: articles/quickstart.html
+[advanced]: advanced.html
 

@@ -1,0 +1,49 @@
+
+destination: docs
+
+authors:
+  Ilya Korsunsky:
+    href: https://github.com/ilyakorsunsky
+  Soumya Raychaudhuri:
+    href: https://immunogenomics.hms.harvard.edu
+
+toc:
+  depth: 2
+
+reference:
+- title: Functions
+  desc: ~
+  contents:
+  - '`HarmonyMatrix`'
+  - '`RunHarmony`'
+- title: Data
+  desc: ~
+  contents:
+  - '`cell_lines`'
+  - '`cell_lines_small`'
+  - '`cell_lines_small_sce`'
+  - '`cell_lines_small_seurat_v2`'
+  - '`cell_lines_small_seurat_v3`'
+
+navbar:
+  title: "Harmony"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Get started"
+      href: articles/quickstart.html
+    - text: "Reference"
+      href: reference/index.html
+    - text: "Tutorials"
+      menu:
+      - text: "Detailed Walkthrough"
+        href: advanced.html
+      - text: "MUDAN"
+        href: mudan.html
+      - text: "Seurat V2"
+        href: SeuratV2.html
+      - text: "Seurat V3"
+        href: SeuratV3.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/immunogenomics/harmony
