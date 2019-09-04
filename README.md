@@ -1,17 +1,18 @@
 # Harmony <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
-Harmony is an open-source, general-purpose, R package with an efficient
-algorithm for integrating multiple data sets.
+Harmony is a general-purpose R package with an efficient algorithm for
+integrating multiple data sets.
 
-For example, Harmony can align multiple single-cell RNA-seq data sets for batch
-correction or meta analysis of cells from different tissues, donors, and
-technologies.
+Below, we show how Harmony aligns three single-cell RNA-seq data sets from
+different donors. After alignment, it is easier to identify similar cell types
+across the donors.
 
-The algorithm has four main steps:
+<p align="center">
+<img src="https://i.imgur.com/eAPbMJN.gif" style="max-width:40%;">
+</p>
 
-![ ](vignettes/main.jpg)
-
-# Citing Harmony
+Harmony can also be used for batch correction and meta analysis of cells from
+different donors, donors, and technologies.
 
 If you use Harmony for published work, please cite the original manuscript.
 
