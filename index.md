@@ -8,14 +8,14 @@ Harmony is:
 
 - **Fast:** Analyze thousands of cells on your laptop.
 - **Sensitive:** Different cell types may be present or absent in each batch.
-- **Accurate:** Integrate cells from multiple donors, tissues, and even totally
-  different technologies.
+- **Accurate:** Integrate cells from multiple donors, tissues -- even different
+  technologies.
 
 <div class="container-fluid"></div>
 
 <div class="row">
 
-  <div class="col-xs-4">
+  <div class="col-sm-4">
     <div class="thumbnail">
       <img src="articles/main.jpg" alt="Steps in the Harmony algorithm"">
       <div class="caption">
@@ -26,7 +26,7 @@ Harmony is:
     </div>
   </div>
 
-  <div class="col-xs-4">
+  <div class="col-sm-4">
     <div class="thumbnail">
       <img src="articles/advanced.png" alt="Cells colored by dataset or cell type">
       <div class="caption">
@@ -37,14 +37,13 @@ Harmony is:
     </div>
   </div>
 
-  <div class="col-xs-4">
+  <div class="col-sm-4">
     <div class="thumbnail">
-      <img src="https://i.imgur.com/eAPbMJN.gif" alt="Animation of harmony">
+      <img src="https://i.imgur.com/eAPbMJN.gif" alt="Animation of harmony" style="max-height:200px">
       <div class="caption">
-        <h3>Harmony in motion</h3>
-				<p>Animation helps to visualize how Harmony aligns three single-cell
-				RNA-seq data sets from different donors.</p>
-        <p><a href="#" class="btn btn-primary" role="button">Learn more</a></p>
+        <h3>Animation</h3>
+				<p>Visualize how Harmony aligns three single-cell RNA-seq data sets from different donors.</p>
+        <p><a href="https://slowkow.com/notes/harmony-animation" class="btn btn-primary" role="button">Learn more</a></p>
       </div>
     </div>
   </div>
