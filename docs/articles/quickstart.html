@@ -13,8 +13,9 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
 <meta property="og:title" content="Quick start to Harmony">
 <meta property="og:description" content="">
@@ -91,6 +92,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
@@ -115,9 +117,9 @@
 <h1 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h1>
 <p>Install Harmony with standard Bioconductor commands.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/ns-load">requireNamespace</a></span>(<span class="st">"BiocManager"</span>, <span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"BiocManager"</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">BiocManager<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/BiocManager/topics/install">install</a></span>(<span class="st">"harmony"</span>, <span class="dt">version =</span> <span class="st">"3.8"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span>(<span class="st">"BiocManager"</span>, <span class="dt">quietly =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"BiocManager"</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">BiocManager<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span>(<span class="st">"harmony"</span>, <span class="dt">version =</span> <span class="st">"3.8"</span>)</a></code></pre></div>
 </div>
 <div id="integrating-cell-line-datasets-from-10x" class="section level1">
 <h1 class="hasAnchor">
@@ -130,7 +132,7 @@
 <li>support.10xgenomics.com/single-cell-gene-expression/datasets/1.1.0/jurkat:293t_50:50</li>
 </ul>
 <p>We library normalized the cells, log transformed the counts, and scaled the genes. Then we performed PCA and kept the top 20 PCs. The PCA embeddings and meta data are available as part of this package.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(cell_lines)</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(cell_lines)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">V &lt;-<span class="st"> </span>cell_lines<span class="op">$</span>scaled_pcs</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">meta_data &lt;-<span class="st"> </span>cell_lines<span class="op">$</span>meta_data</a></code></pre></div>
 <p>Initially, the cells cluster by both dataset (left) and cell type (right).</p>
@@ -146,10 +148,10 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">p2 &lt;-<span class="st"> </span><span class="kw">do_scatter</span>(V, meta_data, <span class="st">'cell_type'</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">'Colored by cell type'</span>)</a></code></pre></div>
 <pre><code>## Warning: Ignoring unknown parameters: segment.size</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">cowplot<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/cowplot/topics/plot_grid">plot_grid</a></span>(p1, p2)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">cowplot<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/cowplot/man/plot_grid.html">plot_grid</a></span>(p1, p2)</a></code></pre></div>
 <p><img src="quickstart_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p>Let’s run Harmony to remove the influence of dataset-of-origin from the embedding. By default, Harmony accepts a normalized gene expression matrix and performs PCA. Since here we already have the PCs, we specify <em>do_pca=FALSE</em>. The matrix <em>harmony_embeddings</em> is the matrix of Harmony corrected PCA embeddings.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">harmony_embeddings &lt;-<span class="st"> </span>harmony<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/harmony/topics/HarmonyMatrix">HarmonyMatrix</a></span>(</a>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">harmony_embeddings &lt;-<span class="st"> </span>harmony<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/harmony/man/HarmonyMatrix.html">HarmonyMatrix</a></span>(</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2">    V, meta_data, <span class="st">'dataset'</span>, <span class="dt">do_pca =</span> <span class="ot">FALSE</span>, <span class="dt">verbose=</span><span class="ot">FALSE</span></a>
 <a class="sourceLine" id="cb9-3" data-line-number="3">)</a></code></pre></div>
 <p>After Harmony, the datasets are now mixed (left) and the cell types are still separate (right).</p>
@@ -159,7 +161,7 @@
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">p2 &lt;-<span class="st"> </span><span class="kw">do_scatter</span>(harmony_embeddings, meta_data, <span class="st">'cell_type'</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">    </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">'Colored by cell type'</span>)</a></code></pre></div>
 <pre><code>## Warning: Ignoring unknown parameters: segment.size</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">cowplot<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/cowplot/topics/plot_grid">plot_grid</a></span>(p1, p2, <span class="dt">nrow =</span> <span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">cowplot<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/cowplot/man/plot_grid.html">plot_grid</a></span>(p1, p2, <span class="dt">nrow =</span> <span class="dv">1</span>)</a></code></pre></div>
 <p><img src="quickstart_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 </div>
 <div id="next-steps" class="section level1">
@@ -170,9 +172,9 @@
 <a href="#interfacing-to-software-packages" class="anchor"></a>Interfacing to software packages</h2>
 <p>You can also run Harmony as part of an established pipeline in several packages, such as Seurat, MUDAN, and scran. For these vignettes, please <a href="software.broadinstitute.org/harmony">visit our website</a>.</p>
 <p>The most common way to run Harmony is on reduced dimensions such as PC embeddings from principal component analysis (PCA). If you use low dimensional embeddings, set <code>do_pca = FALSE</code>. A small single-cell RNA-seq dataset is include in the Harmony package.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(harmony)</a>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(harmony)</a>
 <a class="sourceLine" id="cb15-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(cell_lines)</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(cell_lines)</a>
 <a class="sourceLine" id="cb15-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb15-5" data-line-number="5">cell_lines<span class="op">$</span>meta_data[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,]</a>
 <a class="sourceLine" id="cb15-6" data-line-number="6">## # A tibble: 6 x 5</a>
@@ -212,7 +214,7 @@
 <h2 class="hasAnchor">
 <a href="#normalized-gene-matrix" class="anchor"></a>Normalized gene matrix</h2>
 <p>You can also run Harmony on a sparse matrix of library size normalized expression counts. The <code><a href="../reference/HarmonyMatrix.html">HarmonyMatrix()</a></code> function will scale expression data, run PCA, and run the Harmony integration algorithm.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(harmony)</a>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(harmony)</a>
 <a class="sourceLine" id="cb16-2" data-line-number="2">my_harmony_embeddings &lt;-<span class="st"> </span><span class="kw"><a href="../reference/HarmonyMatrix.html">HarmonyMatrix</a></span>(</a>
 <a class="sourceLine" id="cb16-3" data-line-number="3">  <span class="dt">data_mat  =</span> normalized_counts,</a>
 <a class="sourceLine" id="cb16-4" data-line-number="4">  <span class="dt">meta_data =</span> meta_data,</a>
@@ -248,11 +250,11 @@
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">harmonized_pcs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/HarmonyMatrix.html">HarmonyMatrix</a></span>(</a>
 <a class="sourceLine" id="cb18-2" data-line-number="2">  <span class="dt">data_mat  =</span> scaled_pcs,</a>
 <a class="sourceLine" id="cb18-3" data-line-number="3">  <span class="dt">meta_data =</span> meta_data,</a>
-<a class="sourceLine" id="cb18-4" data-line-number="4">  <span class="dt">vars_use  =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"dataset"</span>, <span class="st">"donor"</span>, <span class="st">"batch_id"</span>), <span class="co"># multiple covariates</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">  <span class="dt">vars_use  =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"dataset"</span>, <span class="st">"donor"</span>, <span class="st">"batch_id"</span>), <span class="co"># multiple covariates</span></a>
 <a class="sourceLine" id="cb18-5" data-line-number="5">  <span class="dt">do_pca    =</span> <span class="ot">FALSE</span></a>
 <a class="sourceLine" id="cb18-6" data-line-number="6">)</a></code></pre></div>
 <p>Do the same with your Seurat object:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">seuratObject &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RunHarmony.html">RunHarmony</a></span>(seuratObject, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"dataset"</span>, <span class="st">"donor"</span>, <span class="st">"batch_id"</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">seuratObject &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RunHarmony.html">RunHarmony</a></span>(seuratObject, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"dataset"</span>, <span class="st">"donor"</span>, <span class="st">"batch_id"</span>))</a></code></pre></div>
 </div>
 <div id="detailed-breakdown-of-the-harmony-algorithm" class="section level2">
 <h2 class="hasAnchor">
@@ -263,7 +265,7 @@
 <div id="session-info" class="section level1">
 <h1 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h1>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/sessionInfo">sessionInfo</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</a></code></pre></div>
 <pre><code>## R version 3.6.0 (2019-04-26)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
 ## Running under: macOS High Sierra 10.13.6
@@ -286,22 +288,22 @@
 ##  [1] compiler_3.6.0     pillar_1.4.2       BiocManager_1.30.4
 ##  [4] tools_3.6.0        digest_0.6.20      evaluate_0.14     
 ##  [7] memoise_1.1.0      tibble_2.1.3       gtable_0.3.0      
-## [10] pkgconfig_2.0.2    rlang_0.4.0        commonmark_1.7    
-## [13] yaml_2.2.0         pkgdown_1.3.0      xfun_0.9          
-## [16] withr_2.1.2        stringr_1.4.0      roxygen2_6.1.1    
-## [19] xml2_1.2.2         knitr_1.24         desc_1.2.0        
-## [22] fs_1.3.1           rprojroot_1.3-2    grid_3.6.0        
-## [25] tidyselect_0.2.5   glue_1.3.1         R6_2.4.0          
-## [28] rmarkdown_1.15     bookdown_0.13      tidyr_0.8.3       
-## [31] purrr_0.3.2        magrittr_1.5       codetools_0.2-16  
-## [34] backports_1.1.4    scales_1.0.0       htmltools_0.3.6   
-## [37] MASS_7.3-51.4      assertthat_0.2.1   colorspace_1.4-1  
-## [40] labeling_0.3       stringi_1.4.3      lazyeval_0.2.2    
-## [43] munsell_0.5.0      crayon_1.3.4</code></pre>
+## [10] pkgconfig_2.0.2    rlang_0.4.0        yaml_2.2.0        
+## [13] pkgdown_1.4.0.9000 xfun_0.9           withr_2.1.2       
+## [16] stringr_1.4.0      knitr_1.24         desc_1.2.0        
+## [19] fs_1.3.1           rprojroot_1.3-2    grid_3.6.0        
+## [22] tidyselect_0.2.5   glue_1.3.1         R6_2.4.0          
+## [25] rmarkdown_1.15     bookdown_0.13      tidyr_0.8.3       
+## [28] purrr_0.3.2        magrittr_1.5       codetools_0.2-16  
+## [31] backports_1.1.4    scales_1.0.0       htmltools_0.3.6   
+## [34] MASS_7.3-51.4      assertthat_0.2.1   colorspace_1.4-1  
+## [37] labeling_0.3       stringi_1.4.3      lazyeval_0.2.2    
+## [40] munsell_0.5.0      crayon_1.3.4</code></pre>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+
         <div id="tocnav">
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
@@ -327,17 +329,20 @@
 </div>
 
 
+
       <footer><div class="copyright">
   <p>Developed by <a href="https://github.com/ilyakorsunsky">Ilya Korsunsky</a>, Nghia Millard, <a href="https://immunogenomics.hms.harvard.edu">Soumya Raychaudhuri</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.9000.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

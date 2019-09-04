@@ -13,8 +13,9 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Fast, Sensitive, and Accurate Integration of Single Cell Data">
 <meta property="og:description" content="Implementation of the Harmony algorithm for single cell integration, described in Korsunsky et al &lt;doi.org/10.1101/461954&gt;. Package includes a standalone Harmony function and interfaces to external frameworks.">
@@ -91,19 +92,60 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
 
 <div id="harmony" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#harmony" class="anchor"></a>Harmony <img src="reference/figures/logo.png" align="right" alt="" width="120">
+<a href="#harmony" class="anchor"></a>Harmony <img src="reference/figures/logo.png" align="right" alt="" width="150">
 </h1></div>
-<p>Harmony is a general-purpose R package with an efficient algorithm for integrating multiple data sets.</p>
-<p>Below, we show how Harmony aligns three single-cell RNA-seq data sets from different donors. After alignment, it is easier to identify similar cell types across the donors.</p>
-<p align="center">
-<img src="https://i.imgur.com/eAPbMJN.gif" style="max-width:40%;"></p>
-<p>Harmony can also be used for batch correction and meta analysis of cells from different donors, donors, and technologies.</p>
-<p>If you use Harmony for published work, please cite the original manuscript.</p>
+<p>Harmony is a general-purpose R package with an efficient algorithm for integrating multiple data sets. It is especially useful for large single-cell datasets such as single-cell RNA-seq.</p>
+<p>Harmony is:</p>
+<ul>
+<li>
+<strong>Fast:</strong> Analyze thousands of cells on your laptop.</li>
+<li>
+<strong>Sensitive:</strong> Different cell types may be present or absent in each batch.</li>
+<li>
+<strong>Accurate:</strong> Integrate cells from multiple donors, tissues, and even totally different technologies.</li>
+</ul>
+<div class="container-fluid"></div>
+<div class="row">
+
+  <div class="col-xs-4">
+    <div class="thumbnail">
+      <img src="articles/main.jpg" alt="Steps in the Harmony algorithm"><div class="caption">
+        <h3>Getting started</h3>
+                <p>See how to use Harmony with any data, or integrate it with your Seurat pipeline.</p>
+        <p><a href="articles/quickstart.html" class="btn btn-primary" role="button">Learn more</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="thumbnail">
+      <img src="articles/advanced.png" alt="Cells colored by dataset or cell type"><div class="caption">
+        <h3>Detailed tutorial</h3>
+                <p>Read about the internal data structures and algorithm details.</p>
+        <p><a href="advanced.html" class="btn btn-primary" role="button">Learn more</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+    <div class="thumbnail">
+      <img src="https://i.imgur.com/eAPbMJN.gif" alt="Animation of harmony"><div class="caption">
+        <h3>Harmony in motion</h3>
+                <p>Animation helps to visualize how Harmony aligns three single-cell
+                RNA-seq data sets from different donors.</p>
+        <p><a href="#" class="btn btn-primary" role="button">Learn more</a></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<p>If you use Harmony for published work, please cite our manuscript:</p>
 <div class="well">
 <p><b>Fast, sensitive, and accurate integration of single cell data with Harmony</b></p>
 <p>Ilya Korsunsky, Jean Fan, Kamil Slowikowski, Fan Zhang, Kevin Wei, Yuriy
@@ -117,14 +159,14 @@ Baglaenko, Michael Brenner, Po-Ru Loh, Soumya Raychaudhuri</p>
 <a href="#installation" class="anchor"></a>Installation</h1>
 <p>The easiest way to get Harmony is to install it from Github:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"immunogenomics/harmony"</span>)</a></code></pre></div>
-<p>Harmony has been tested on R versions &gt;= 3.4 on Linux, OS X, and Windows.</p>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/reexports.html">install_github</a></span>(<span class="st">"immunogenomics/harmony"</span>)</a></code></pre></div>
+<p>Harmony has been tested on R versions &gt;= 3.4 on Linux, macOS, and Windows.</p>
 </div>
 <div id="usage" class="section level1">
 <h1 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h1>
 <p>Run the <code><a href="reference/HarmonyMatrix.html">HarmonyMatrix()</a></code> function on your PCs from principal component analysis:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(harmony)</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(harmony)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">harmonized_pcs &lt;-<span class="st"> </span><span class="kw"><a href="reference/HarmonyMatrix.html">HarmonyMatrix</a></span>(</a>
 <a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="dt">data_mat  =</span> pcs,       <span class="co"># Matrix with coordinates for each cell (row) along many PCs (columns)</span></a>
@@ -132,12 +174,6 @@ Baglaenko, Michael Brenner, Po-Ru Loh, Soumya Raychaudhuri</p>
 <a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="dt">vars_use  =</span> <span class="st">"dataset"</span>, <span class="co"># Column in meta_data that defines dataset for each cell</span></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7">  <span class="dt">do_pca    =</span> <span class="ot">FALSE</span>      <span class="co"># Since we are providing PCs, do not run PCA</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8">)</a></code></pre></div>
-<div id="tutorials" class="section level2">
-<h2 class="hasAnchor">
-<a href="#tutorials" class="anchor"></a>Tutorials</h2>
-<p>Check out the <a href="articles/quickstart.html">quick start tutorial</a> for more details.</p>
-<p>Learn more about the internal data structures and algorithm details in the <a href="advanced.html">advanced tutorial</a>.</p>
-</div>
 </div>
 
   </div>
@@ -170,10 +206,10 @@ Baglaenko, Michael Brenner, Po-Ru Loh, Soumya Raychaudhuri</p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://github.com/ilyakorsunsky">Ilya Korsunsky</a> <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0003-4848-3948" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
-<li>Nghia Millard <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-0518-7674" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://github.com/ilyakorsunsky">Ilya Korsunsky</a> <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0003-4848-3948" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
+<li>Nghia Millard <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-0518-7674" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li>
-<a href="https://immunogenomics.hms.harvard.edu">Soumya Raychaudhuri</a> <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1901-8265" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://immunogenomics.hms.harvard.edu">Soumya Raychaudhuri</a> <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1901-8265" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
@@ -181,17 +217,20 @@ Baglaenko, Michael Brenner, Po-Ru Loh, Soumya Raychaudhuri</p>
   </div>
 </div>
 
+
       <footer><div class="copyright">
   <p>Developed by <a href="https://github.com/ilyakorsunsky">Ilya Korsunsky</a>, Nghia Millard, <a href="https://immunogenomics.hms.harvard.edu">Soumya Raychaudhuri</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.9000.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
