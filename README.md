@@ -21,12 +21,14 @@ different donors, donors, and technologies.
 
 If you use Harmony for published work, please cite the original manuscript.
 
-<div class="well">
+<table>
+  <tr><td>
 <p><b>Fast, sensitive, and accurate integration of single cell data with Harmony</b></p>
 <p>Ilya Korsunsky, Jean Fan, Kamil Slowikowski, Fan Zhang, Kevin Wei, Yuriy
 Baglaenko, Michael Brenner, Po-Ru Loh, Soumya Raychaudhuri</p>
 <p><i>bioRxiv</i> 2019. <a href="https://doi.org/10.1101/461954">doi.org/10.1101/461954</a></p>
-</div>
+    </td></tr>
+</table>
 
 We will share the code needed to reproduce results from the manuscript at
 <https://github.com/immunogenomics/harmony2019>. 
