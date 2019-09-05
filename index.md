@@ -16,27 +16,27 @@ Harmony is:
 <div class="card-deck">
   <div class="card">
     <img class="card-img-top" src="articles/main.jpg" alt="Steps in the Harmony algorithm">
-    <div class="card-body">
+    <div class="card-body d-flex flex-column">
       <h5 class="card-title">Getting started</h5>
       <p class="card-text">See how to use Harmony with your data and integrate
       it into your analysis pipeline.</p>
-      <p><a href="articles/quickstart.html" class="card-link">Read →</a></p>
+      <p class="mt-auto"><a href="articles/quickstart.html" class="card-link">Read →</a></p>
     </div>
   </div>
   <div class="card">
     <img class="card-img-top" src="articles/advanced.png" alt="Cells colored by dataset and cell type">
-    <div class="card-body">
+    <div class="card-body d-flex flex-column">
       <h5 class="card-title">Advanced tutorial</h5>
       <p class="card-text">Find out more about the internal data structures and algorithm details in this tutorial.</p>
-      <p><a href="advanced.html" class="card-link">Read →</a></p>
+      <p class="mt-auto"><a href="advanced.html" class="card-link">Read →</a></p>
     </div>
   </div>
   <div class="card">
     <img class="card-img-top" src="https://i.imgur.com/eAPbMJN.gif" alt="Animation of harmony" style="max-height:200px">
-    <div class="card-body">
+    <div class="card-body d-flex flex-column">
       <h5 class="card-title">Animation</h5>
       <p class="card-text">Visualize how Harmony aligns single-cell RNA-seq datasets from three different donors.</p>
-      <p><a href="https://slowkow.com/notes/harmony-animation" class="card-link">Read →</a></p>
+      <p class="mt-auto"><a href="https://slowkow.com/notes/harmony-animation" class="card-link">Read →</a></p>
     </div>
   </div>
 </div>
