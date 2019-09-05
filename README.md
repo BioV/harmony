@@ -1,14 +1,19 @@
 # Harmony <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
-Harmony is a general-purpose R package with an efficient algorithm for
-integrating multiple data sets.
+Harmony is a general-purpose R package with an efficient algorithm for integrating multiple data sets. It is especially useful for large datasets such as single-cell RNA-seq.
 
-Below, we show how Harmony aligns three single-cell RNA-seq data sets from
+Harmony is:
+
+- **Fast:** Analyze thousands of cells on your laptop.
+- **Sensitive:** Different cell types may be present or absent in each batch.
+- **Accurate:** Integrate cells from multiple donors, tissues – even different technologies.
+
+Below, we show how Harmony aligns single-cell RNA-seq data sets from three
 different donors. After alignment, it is easier to identify similar cell types
 across the donors.
 
 <p align="center">
-<img src="https://i.imgur.com/eAPbMJN.gif" style="max-width:40%;">
+<img src="https://i.imgur.com/g76m6Mx.gif" style="max-width:40%;">
 </p>
 
 Harmony can also be used for batch correction and meta analysis of cells from
@@ -52,13 +57,8 @@ harmonized_pcs <- HarmonyMatrix(
 )
 ```
 
-## Tutorials
+# Documentation
 
-Check out the [quick start tutorial][quickstart] for more details.
+Check out the [Harmony website][website] for more information.
 
-Learn more about the internal data structures and algorithm details in the
-[advanced tutorial][advanced].
-
-[quickstart]: articles/quickstart.html
-[advanced]: advanced.html
-
+[website]: https://slowkow.github.io/harmony
