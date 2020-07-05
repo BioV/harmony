@@ -1,5 +1,11 @@
 language: r
-os: linux
+r:
+  - oldrel
+  - release
+  - devel
+os:
+  - osx
+  - linux
 cache: packages
 warnings_are_errors: true
 r_check_args: "--no-manual --timings"
@@ -7,13 +13,6 @@ r_check_args: "--no-manual --timings"
 bioc_packages:
     - BiocStyle
     - SingleCellExperiment
-
-jobs:
-  include:
-  - r: release
-    os: osx
-  - r: release
-    os: linux
 
 env:
  global:
